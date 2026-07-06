@@ -1,0 +1,896 @@
+/* Reset — box-sizing and default spacing so every element starts from a blank slate */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Brand palette — reused throughout via var(--name) instead of repeating hex codes */
+:root {
+  --oat: #F6F1E6;
+  --oat-2: #EFE7D4;
+  --card: #FDFBF5;
+  --charcoal: #241F1B;
+  --charcoal-2: #171310;
+  --wine: #7C2E3A;
+  --wine-dark: #5B2028;
+  --gold: #AD8A52;
+  --line: #E3D8BF;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--oat);
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  color: var(--charcoal-2);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Centered content column used inside most sections */
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Buttons — .btn sets the shared shape; pick one of primary/outline/ghost-light for color,
+   and add .btn-sm for the compact size used in the nav */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 30px;
+  border-radius: 100px;
+  border: 1.5px solid transparent;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .01em;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--wine);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--wine-dark);
+}
+
+.btn-outline {
+  border-color: var(--charcoal-2);
+  color: var(--charcoal-2);
+}
+
+.btn-outline:hover {
+  background: var(--charcoal-2);
+  color: #fff;
+}
+
+.btn-ghost-light {
+  border-color: rgba(255, 255, 255, .8);
+  color: #fff;
+}
+
+.btn-ghost-light:hover {
+  background: #fff;
+  color: var(--charcoal-2);
+}
+
+.btn-sm {
+  padding: 9px 20px;
+  font-size: 13px;
+}
+
+/* NAV — sticky flat bar: logo on the left, primary links centered, actions on the right */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--oat);
+  border-bottom: 1px solid var(--line);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 16px 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: auto;
+  height: 42px;
+  object-fit: contain;
+}
+
+.brand span {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: .01em;
+  color: var(--charcoal-2);
+  white-space: nowrap;
+}
+
+.nav-center {
+  display: flex;
+  gap: 30px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.nav-center a:hover {
+  color: var(--wine);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-right a:hover {
+  color: var(--wine);
+}
+
+/* Hamburger button — hidden on desktop, shown only at the tablet breakpoint below */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--charcoal-2);
+}
+
+/* Turn the three bars into an X while the menu is open */
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* HERO — full first screen: fills viewport below the sticky nav */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 73px);
+  min-height: 440px;
+  background:
+    linear-gradient(100deg, rgba(23, 19, 16, .6) 30%, rgba(23, 19, 16, .1) 75%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop') center / cover no-repeat;
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 560px;
+  padding: 0 32px;
+  color: #fff;
+}
+
+.hero .eyebrow {
+  margin-bottom: 14px;
+  font-size: 12.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #E3C9A0;
+}
+
+.hero h1 {
+  font-size: 46px;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 22px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* SCREEN 2 — three images fit together in one viewport, each a link to a fuller section below */
+.gallery-screen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  height: calc(100vh - 73px);
+  min-height: 420px;
+  background: var(--line);
+}
+
+.g-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.g-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.g-item:hover img {
+  transform: scale(1.05);
+}
+
+.g-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 26px;
+  background: linear-gradient(0deg, rgba(23, 19, 16, .82), rgba(23, 19, 16, 0) 70%);
+}
+
+.g-caption .eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #E3C9A0;
+}
+
+.g-caption h3 {
+  font-size: 19px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.g-caption .arrow {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: #EFE4D2;
+}
+
+/* Default vertical rhythm for every <section>, plus a shared heading block style
+   (eyebrow + title + intro paragraph) used at the top of most sections */
+section {
+  padding: 96px 0;
+}
+
+.section-head {
+  max-width: 600px;
+  margin-bottom: 44px;
+}
+
+.section-head h2 {
+  margin-top: 8px;
+  font-size: 32px;
+}
+
+.section-head p {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #6B5A44;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* REWARDS — dark teaser band explaining the loyalty program, with a stamp-card preview */
+.rewards {
+  background: var(--charcoal-2);
+  color: #fff;
+}
+
+.rewards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 56px;
+}
+
+.rewards .eyebrow {
+  margin-bottom: 14px;
+  font-size: 12.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #D9B98A;
+}
+
+.rewards h2 {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.rewards p {
+  max-width: 420px;
+  font-size: 15px;
+  color: #CBB99E;
+  margin-bottom: 26px;
+}
+
+.reward-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reward-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.reward-step .num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--wine);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.reward-step div p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #CBB99E;
+}
+
+.reward-step div b {
+  font-size: 14.5px;
+  color: #fff;
+}
+
+.reward-card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 32px;
+  color: var(--charcoal-2);
+}
+
+.stamp-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.stamp {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1.5px dashed #C9B99F;
+}
+
+.stamp.on {
+  background: var(--gold);
+  border-style: solid;
+  border-color: var(--gold);
+}
+
+/* MENU — real, text-forward list (not fake photo cards) */
+.menu-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 56px;
+}
+
+.menu-wrap--single {
+  grid-template-columns: 1fr;
+}
+
+.menu-feature {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  aspect-ratio: 3 / 4;
+}
+
+.menu-feature img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-cat {
+  margin: 26px 0 12px;
+  font-size: 12.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--wine);
+  font-weight: 700;
+}
+
+.menu-cat:first-child {
+  margin-top: 0;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-row .name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.menu-row .desc {
+  margin-top: 2px;
+  font-size: 12.5px;
+  color: #7A6A55;
+}
+
+.menu-row .price {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--wine);
+  white-space: nowrap;
+}
+
+.menu-note {
+  margin-top: 18px;
+  font-size: 12.5px;
+  color: #7A6A55;
+}
+
+.menu-cta {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+/* Reusable helpers — used across the story, menu and visit sections
+   so we don't repeat the same inline style="..." in the HTML */
+.eyebrow-gold {
+  color: var(--gold);
+  font-size: 12.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.narrow-wrap {
+  max-width: 720px;
+}
+
+.section-title {
+  margin: 10px 0 18px;
+  font-size: 30px;
+}
+
+.section-text {
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: #5B4B38;
+}
+
+.section-text:last-of-type {
+  margin-bottom: 26px;
+}
+
+.button-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.button-row--spaced {
+  margin-top: 28px;
+}
+
+/* Text logo shown only if the hotlinked image logo fails to load — see main.js */
+.foot-logo-fallback {
+  display: none;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--charcoal-2);
+  letter-spacing: .02em;
+}
+
+.reward-card-label {
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #7A6A55;
+  font-weight: 700;
+}
+
+.reward-card-title {
+  margin-top: 6px;
+  font-size: 20px;
+}
+
+.reward-card-note {
+  font-size: 13px;
+  color: #7A6A55;
+}
+
+/* VISIT — two-column layout: address/hours/directions on the left, embedded map on the right */
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.visit-address {
+  margin: 10px 0 6px;
+  font-size: 30px;
+}
+
+.hours-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.hours-table td {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14.5px;
+}
+
+.hours-table td:last-child {
+  text-align: right;
+  color: #7A6A55;
+}
+
+.map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #E3D8BF, #C9B99F);
+  color: #5B4B38;
+  font-size: 13px;
+}
+
+/* FOOTER — multi-column */
+footer {
+  background: var(--charcoal-2);
+  color: #CBB99E;
+  padding: 64px 0 28px;
+  font-size: 13.5px;
+}
+
+.foot-cols {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 44px;
+}
+
+.foot-cols h4 {
+  margin-bottom: 16px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #fff;
+  font-weight: 700;
+}
+
+.foot-cols a {
+  display: block;
+  margin-bottom: 10px;
+  color: #CBB99E;
+}
+
+.foot-cols a:hover {
+  color: var(--gold);
+}
+
+.foot-brand .brand {
+  display: inline-flex;
+  margin-bottom: 16px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.foot-brand .brand img {
+  width: auto;
+  height: 38px;
+  filter: none;
+}
+
+.foot-brand .brand span {
+  display: none;
+}
+
+.foot-brand h3 {
+  font-size: 19px;
+  color: #fff;
+}
+
+.foot-brand p {
+  max-width: 220px;
+  font-size: 13px;
+  color: #9C8C76;
+}
+
+.foot-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.foot-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.foot-social a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.foot-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  color: #8E7C63;
+  font-size: 12.5px;
+}
+
+/* Tablet — collapse the two-column/three-column grids to one column and hide the center nav links */
+@media (max-width: 900px) {
+  nav {
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Collapse the link row into a dropdown panel, toggled by main.js adding/removing .is-open */
+  .nav-center {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 32px 16px;
+    background: var(--oat);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-center.is-open {
+    display: flex;
+  }
+
+  .nav-center a {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-center a:last-child {
+    border-bottom: none;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 480px;
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .gallery-screen {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .g-item {
+    min-height: 220px;
+  }
+
+  .rewards-grid,
+  .visit-grid,
+  .menu-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .foot-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section {
+    padding: 64px 0;
+  }
+}
+
+/* Phone — tighten padding/type sizes and hide secondary nav links, keeping only the CTA button */
+@media (max-width: 600px) {
+  .wrap {
+    padding: 0 20px;
+  }
+
+  nav {
+    padding: 14px 20px;
+  }
+
+  .nav-center {
+    padding: 8px 20px 16px;
+  }
+
+  .brand img {
+    height: 34px;
+  }
+
+  .brand span {
+    font-size: 16px;
+  }
+
+  .nav-right {
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .nav-right a:not(.btn) {
+    display: none;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 13px;
+  }
+
+  .btn-sm {
+    padding: 9px 16px;
+    font-size: 12.5px;
+  }
+
+  .hero {
+    min-height: 420px;
+    padding: 56px 0;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p,
+  .hero-inner p {
+    font-size: 14px;
+  }
+
+  .hero .eyebrow {
+    font-size: 11px;
+  }
+
+  section {
+    padding: 48px 0;
+  }
+
+  .section-head h2 {
+    font-size: 24px;
+  }
+
+  .g-item {
+    min-height: 180px;
+  }
+
+  .g-caption {
+    padding: 18px 16px;
+  }
+
+  .g-caption h3 {
+    font-size: 16px;
+  }
+
+  .reward-card,
+  .cta-block {
+    padding: 22px;
+  }
+
+  .menu-row {
+    padding: 11px 0;
+    gap: 10px;
+  }
+
+  .menu-row .name {
+    font-size: 14px;
+  }
+
+  .foot-cols {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .foot-bottom {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+/* Small phones — shrink the hero headline and buttons a bit further */
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .btn {
+    padding: 11px 18px;
+    font-size: 12px;
+  }
+}

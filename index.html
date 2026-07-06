@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOTO CAFE — Satisfy Your Senses | Tecumseh, ON</title>
+<meta name="description" content="TOTO Cafe in Tecumseh, Ontario — small-batch coffee, scratch-made pastries and paninis. Rated 4.8 on Restaurant Guru, Best Cafe 2024. See the menu, hours and directions.">
+<meta property="og:title" content="TOTO CAFE — Tecumseh, Ontario">
+<meta property="og:description" content="Small-batch coffee, scratch-made pastries and paninis on Riverside Drive. Best Cafe 2024, Restaurant Guru.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sticky top nav: logo, primary links, and directions/menu shortcuts -->
+<header>
+  <nav>
+    <a href="#" class="brand">
+      <img id="navLogo" src="https://totocafe.ca/wp-content/uploads/2024/08/TOTO-Cafe-Logo.png" alt="TOTO Cafe logo">
+      <span>TOTO CAFE</span>
+    </a>
+    <div class="nav-center" id="navCenter">
+      <a href="#menu">Menu</a>
+      <a href="#rewards">Rewards</a>
+      <a href="#visit">Visit</a>
+      <a href="#story">Our story</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://www.google.com/maps/search/?api=1&query=12211+Riverside+Dr+E+Tecumseh+ON+N8N+1A1" target="_blank">Find us</a>
+      <a href="#menu" class="btn btn-primary btn-sm">See the menu</a>
+    </div>
+    <!-- Hamburger toggle, shown only below the tablet breakpoint (see main.js for the open/close behavior) -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navCenter">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Full-viewport hero banner -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Tecumseh, Ontario · Est. 2024</div>
+    <h1>It's a great day for coffee.</h1>
+    <div class="hero-actions">
+      <a href="#menu" class="btn btn-primary">See the menu</a>
+      <a href="#story" class="btn btn-ghost-light">Our story</a>
+    </div>
+  </div>
+</section>
+
+<!-- Three-image teaser linking down to the story, reviews and menu sections -->
+<section class="gallery-screen">
+  <a href="#story" class="g-item">
+    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=800&auto=format&fit=crop" alt="Barista pouring latte art">
+    <div class="g-caption">
+      <span class="eyebrow">Our story</span>
+      <h3>Roasted with care</h3>
+      <span class="arrow">Read more →</span>
+    </div>
+  </a>
+  <a href="#story" class="g-item">
+    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" alt="Cafe interior">
+    <div class="g-caption">
+      <span class="eyebrow">Rated 4.8 · Restaurant Guru</span>
+      <h3>Best Cafe, 2024</h3>
+      <span class="arrow">See reviews →</span>
+    </div>
+  </a>
+  <a href="#menu" class="g-item">
+    <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?q=80&w=800&auto=format&fit=crop" alt="Avocado toast">
+    <div class="g-caption">
+      <span class="eyebrow">From the kitchen</span>
+      <h3>The full menu</h3>
+      <span class="arrow">View menu →</span>
+    </div>
+  </a>
+</section>
+
+<!-- About/story section -->
+<section id="story">
+  <div class="wrap narrow-wrap">
+    <div class="eyebrow eyebrow-gold">Our story</div>
+    <h2 class="section-title">Roasted with intention, poured with care.</h2>
+    <p class="section-text">TOTO Cafe is a neighbourhood spot on Riverside Drive where the coffee is taken seriously but nothing else is — every espresso dialed in daily, every pastry baked before sunrise.</p>
+    <p class="section-text">We've been named Best Cafe by Restaurant Guru and featured in Neighbours of Riverside — 600+ reviews and counting from regulars across Tecumseh and Windsor.</p>
+    <div class="button-row">
+      <a href="https://www.instagram.com/totocafe.ca" target="_blank" class="btn btn-outline btn-sm">Follow along</a>
+      <a href="https://restaurantguru.com/TOTO-CAFE-Tecumseh" target="_blank" class="btn btn-outline btn-sm">Read the reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- Loyalty program explainer + a hardcoded preview of a stamp card -->
+<section id="rewards" class="rewards">
+  <div class="wrap rewards-grid">
+    <div>
+      <div class="eyebrow">Loyalty rewards</div>
+      <h2>Every cup counts.</h2>
+      <p>Ask about our in-house loyalty program next time you order — track visits and unlock a free drink after every ten stamps.</p>
+      <div class="reward-steps">
+        <div class="reward-step"><div class="num">1</div><div><b>Order in-house</b><p>Any drink or bite counts toward your card.</p></div></div>
+        <div class="reward-step"><div class="num">2</div><div><b>Get stamped</b><p>One stamp per visit, no minimum spend.</p></div></div>
+        <div class="reward-step"><div class="num">3</div><div><b>Cash in</b><p>Ten stamps unlocks a free drink of your choice.</p></div></div>
+      </div>
+    </div>
+    <div class="reward-card">
+      <div class="reward-card-label">Your card</div>
+      <h3 class="reward-card-title">6 of 10 stamps</h3>
+      <div class="stamp-grid">
+        <div class="stamp on"></div>
+        <div class="stamp on"></div>
+        <div class="stamp on"></div>
+        <div class="stamp on"></div>
+        <div class="stamp on"></div>
+        <div class="stamp on"></div>
+        <div class="stamp"></div>
+        <div class="stamp"></div>
+        <div class="stamp"></div>
+        <div class="stamp"></div>
+      </div>
+      <p class="reward-card-note">4 more visits to a free drink on us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Full menu, grouped by category -->
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-gold">From the kitchen</div>
+      <h2>The full menu</h2>
+      <p>Everything currently on offer in-house at TOTO Cafe — updated as the kitchen updates it.</p>
+    </div>
+    <div class="menu-wrap menu-wrap--single">
+      <div>
+        <div class="menu-cat">Breakfast</div>
+        <div class="menu-row">
+          <div>
+            <div class="name">Bagel</div>
+            <div class="desc">Cream cheese add-on +$0.70</div>
+          </div>
+          <div class="price">$3.50</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Egg & cheese english muffin</div></div>
+          <div class="price">$5.75</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Roasted red peppers egg sandwich</div></div>
+          <div class="price">$5.75</div>
+        </div>
+        <div class="menu-row">
+          <div>
+            <div class="name">Avocado toast</div>
+            <div class="desc">Egg add-on +$1.00</div>
+          </div>
+          <div class="price">$7.50</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Quiche</div></div>
+          <div class="price">$6.99</div>
+        </div>
+
+        <div class="menu-cat">Sandwiches & paninis</div>
+        <div class="menu-row">
+          <div><div class="name">Caprese panini</div></div>
+          <div class="price">$11.99</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Genoa salami panini</div></div>
+          <div class="price">$12.99</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Mortadella sandwich</div></div>
+          <div class="price">$12.99</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Prosciutto panini</div></div>
+          <div class="price">$13.99</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Loaded Italian panini</div></div>
+          <div class="price">$14.99</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Turkey club sandwich</div></div>
+          <div class="price">$14.99</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Focaccia pizza</div></div>
+          <div class="price">$7.50</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Panini of the week</div></div>
+          <div class="price">$15.00</div>
+        </div>
+
+        <div class="menu-cat">Boards & extras</div>
+        <div class="menu-row">
+          <div><div class="name">Soup of the day</div></div>
+          <div class="price">$5.99</div>
+        </div>
+        <div class="menu-row">
+          <div><div class="name">Salad of the week</div></div>
+          <div class="price">$4.50</div>
+        </div>
+        <div class="menu-row">
+          <div>
+            <div class="name">Charcuterie board, small</div>
+            <div class="desc">Serves 1–2</div>
+          </div>
+          <div class="price">$24.99</div>
+        </div>
+        <div class="menu-row">
+          <div>
+            <div class="name">Charcuterie board, medium</div>
+            <div class="desc">Serves 3–4</div>
+          </div>
+          <div class="price">$49.99</div>
+        </div>
+
+        <p class="menu-note">Coffee, espresso and specialty drinks are made to order in-house — ask your barista for today's picks.</p>
+        <div class="menu-cta">
+          <a href="https://totocafe.ca/wp-content/uploads/2024/08/From_The_Kitchen.pdf" target="_blank" class="btn btn-primary">Download full menu (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Address, hours and an embedded map -->
+<section id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <div class="eyebrow eyebrow-gold">Visit us</div>
+      <h2 class="visit-address">12211 Riverside Dr E,<br>Tecumseh, ON N8N 1A1</h2>
+      <table class="hours-table">
+        <tr><td>Monday – Friday</td><td>7:00 AM – 10:00 PM</td></tr>
+        <tr><td>Saturday</td><td>8:00 AM – 11:00 PM</td></tr>
+        <tr><td>Sunday</td><td>8:00 AM – 8:00 PM</td></tr>
+      </table>
+      <div class="button-row button-row--spaced">
+        <a href="https://www.google.com/maps/search/?api=1&query=12211+Riverside+Dr+E+Tecumseh+ON+N8N+1A1" target="_blank" class="btn btn-primary">Get directions</a>
+        <a href="tel:+15192527033" class="btn btn-outline">Call (519) 252-7033</a>
+      </div>
+    </div>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=12211+Riverside+Dr+E,+Tecumseh,+ON+N8N+1A1&output=embed" width="100%" height="100%" style="border:0; display:block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to TOTO Cafe"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Multi-column footer: brand, menu/visit links, and social -->
+<footer>
+  <div class="wrap">
+    <div class="foot-cols">
+      <div class="foot-brand">
+        <div class="brand">
+          <img id="footLogo" src="https://totocafe.ca/wp-content/uploads/2024/08/TOTO-Cafe-Logo.png" alt="TOTO Cafe logo">
+          <span id="footLogoFallback" class="foot-logo-fallback">TOTO CAFE</span>
+        </div>
+        <h3>TOTO CAFE</h3>
+        <p>Satisfy your senses, one cup at a time. Tecumseh, Ontario.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/totocafe.ca" target="_blank" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/totocafe.ca" target="_blank" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.6c0-.9.3-1.6 1.7-1.6h1.6V3.1C16.5 3.1 15.5 3 14.3 3c-2.5 0-4.2 1.5-4.2 4.3v2.5H7.4v3.2H10V21h3.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <a href="#menu">Full menu</a>
+        <a href="https://totocafe.ca/wp-content/uploads/2024/08/From_The_Kitchen.pdf" target="_blank">Download PDF</a>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <a href="https://www.google.com/maps/search/?api=1&query=12211+Riverside+Dr+E+Tecumseh+ON+N8N+1A1" target="_blank">Directions</a>
+        <a href="tel:+15192527033">(519) 252-7033</a>
+        <a href="#visit">Hours</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com/totocafe.ca" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/totocafe.ca" target="_blank">Facebook</a>
+        <a href="https://restaurantguru.com/TOTO-CAFE-Tecumseh" target="_blank">Restaurant Guru</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 TOTO Cafe. All rights reserved.</span>
+      <span>12211 Riverside Dr E, Tecumseh, ON N8N 1A1</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

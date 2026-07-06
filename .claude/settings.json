@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open \"/Users/digneshsolanki/Desktop/Toto Cafe/index.html\")",
+      "WebSearch"
+    ]
+  }
+}
