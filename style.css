@@ -267,13 +267,16 @@ nav {
   transform: scale(1.05);
 }
 
+/* Gradient never fully clears (stops at .45, not 0) so the caption stays
+   readable even over the brighter parts of a photo; text-shadow below is
+   a second line of defense on top of that. */
 .g-caption {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   padding: 28px 26px;
-  background: linear-gradient(0deg, rgba(23, 19, 16, .82), rgba(23, 19, 16, 0) 70%);
+  background: linear-gradient(0deg, rgba(23, 19, 16, .85), rgba(23, 19, 16, .45) 100%);
 }
 
 .g-caption .eyebrow {
@@ -284,12 +287,14 @@ nav {
   text-transform: uppercase;
   font-weight: 700;
   color: #E3C9A0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
 }
 
 .g-caption h3 {
   font-size: 19px;
   font-weight: 500;
   color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
 }
 
 .g-caption .arrow {
@@ -297,6 +302,7 @@ nav {
   margin-top: 8px;
   font-size: 12.5px;
   color: #EFE4D2;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
 }
 
 /* Default vertical rhythm for every <section>, plus a shared heading block style
